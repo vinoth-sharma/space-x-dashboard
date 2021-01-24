@@ -10,3 +10,13 @@ main {
   position: sticky;
   top: 0;
 }
+
+@media (max-width: 700px) {
+  main {
+    flex-direction: column;
+    justify-content: unset;
+  }
+  .sticky {
+    position: unset;
+  }
+}

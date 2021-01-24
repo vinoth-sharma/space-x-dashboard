@@ -31,3 +31,9 @@
     text-underline-offset: 4px;
   }
 }
+
+@media (max-width: 700px) {
+  .filter-conatiner {
+    margin: 0 auto;
+  }
+}
