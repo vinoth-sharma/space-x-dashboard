@@ -1,8 +1,10 @@
 header {
+  height: 10vh;
   font-size: 1.725rem;
   background-color: #3f0378;
   color: white;
   font-weight: 700;
   margin: auto 0;
-  padding: 1em;
+  display: flex;
+  align-items: center;
 }
