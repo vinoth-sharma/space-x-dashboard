@@ -1,6 +1,6 @@
 <div class="program-wrapper">
   <div class="program-container" *ngFor="let program of programData">
-    <div class="textCenter">
+    <div class="textCenter" style="height: 22vh">
       <img [src]="program.links?.mission_patch_small" alt="Program Img" />
     </div>
     <h3 title="{{ program.mission_name }} #{{ program.flight_number }}">
@@ -21,5 +21,8 @@
       <span>Successful landing:</span>
       <span>{{ program.launch_failure_details ? false : true }}</span>
     </div>
+  </div>
+  <div *ngIf="!programData.length" style="width: 700px">
+    <h2 class="textCenter">No Data Found</h2>
   </div>
 </div>

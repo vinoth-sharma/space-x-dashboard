@@ -2,16 +2,42 @@
   <h3>Filters</h3>
   <h4 class="title">Launch Year</h4>
   <div class="grid-display">
-    <button *ngFor="let year of yearsList">{{ year }}</button>
+    <button
+      *ngFor="let year of yearsList"
+      (click)="filterSelected(year, 'launch_year')"
+      [ngClass]="{ selected: year === filterselectedObj.launch_year }"
+    >
+      {{ year }}
+    </button>
   </div>
   <h4 class="title">Successful Launch</h4>
   <div class="grid-display">
-    <button>True</button>
-    <button>False</button>
+    <button
+      (click)="filterSelected(true, 'launch_success')"
+      [ngClass]="{ selected: true === filterselectedObj.launch_success }"
+    >
+      True
+    </button>
+    <button
+      (click)="filterSelected(false, 'launch_success')"
+      [ngClass]="{ selected: false === filterselectedObj.launch_success }"
+    >
+      False
+    </button>
   </div>
   <h4 class="title">Successful Landing</h4>
   <div class="grid-display">
-    <button>True</button>
-    <button>False</button>
+    <button
+      (click)="filterSelected(true, 'land_success')"
+      [ngClass]="{ selected: true === filterselectedObj.land_success }"
+    >
+      True
+    </button>
+    <button
+      (click)="filterSelected(false, 'land_success')"
+      [ngClass]="{ selected: false === filterselectedObj.land_success }"
+    >
+      False
+    </button>
   </div>
 </div>

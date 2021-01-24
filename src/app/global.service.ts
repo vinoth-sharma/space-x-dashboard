@@ -8,7 +8,7 @@ import { allDataApi, spaceEndpoint } from './utils/app-const';
 export class GlobalService {
   constructor(private http: HttpClient) {}
 
-  getAllSpacePrograms() {
-    return this.http.get(allDataApi);
+  getAllSpacePrograms(params) {
+    return this.http.get(allDataApi + params);
   }
 }

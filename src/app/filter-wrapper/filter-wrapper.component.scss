@@ -14,11 +14,14 @@
     grid-row-gap: 10px;
     button {
       padding: 0.5em;
-      background: green;
+      background: #71c571;
       border: unset;
       color: white;
       border-radius: 5px;
       cursor: pointer;
+      &.selected {
+        background-color: green;
+      }
     }
   }
   .title {

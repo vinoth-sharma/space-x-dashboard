@@ -1,4 +1,7 @@
 <main class="flex">
-  <app-filter-wrapper class="sticky"></app-filter-wrapper>
-  <app-program-wrapper></app-program-wrapper>
+  <app-filter-wrapper
+    class="sticky"
+    (filterSelectedEmittor)="updateFilters($event)"
+  ></app-filter-wrapper>
+  <app-program-wrapper [filterSelected]="url"></app-program-wrapper>
 </main>
