@@ -1,3 +1,29 @@
 .program-wrapper {
-  width: 70%;
+  // width: 700px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(160px, 1fr));
+  grid-column-gap: 22px;
+  grid-row-gap: 22px;
+  .program-container {
+    background-color: whitesmoke;
+    padding: 1em;
+    h3 {
+      color: blue;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    img {
+      height: 22vh;
+      max-width: 100%;
+    }
+    .row-data {
+      display: flex;
+      justify-content: space-between;
+      margin: 8px 0px;
+      span:first-child {
+        font-weight: bold;
+      }
+    }
+  }
 }

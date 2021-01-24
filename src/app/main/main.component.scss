@@ -1,6 +1,12 @@
 main {
-  height: 83vh;
+  height: calc(100vh - 17vh - 60px);
   overflow: auto;
-  width: 100%;
+  //   width: 100%;
   background-color: #9f9f9f;
+  justify-content: space-around;
+  padding: 30px 40px;
+}
+.sticky {
+  position: sticky;
+  top: 0;
 }

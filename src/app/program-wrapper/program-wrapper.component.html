@@ -1,1 +1,25 @@
-<div class="program-wrapper">hlooooo</div>
+<div class="program-wrapper">
+  <div class="program-container" *ngFor="let program of programData">
+    <div class="textCenter">
+      <img [src]="program.links?.mission_patch_small" alt="Program Img" />
+    </div>
+    <h3 title="{{ program.mission_name }} #{{ program.flight_number }}">
+      {{ program.mission_name }} #{{ program.flight_number }}
+    </h3>
+    <div><strong>Missiom Ids</strong></div>
+    <ul>
+      <li *ngFor="let mission of program.mission_id">{{ mission }}</li>
+      <li *ngIf="!program.mission_id.length">no mission id found</li>
+    </ul>
+    <div class="row-data">
+      <span>Launch Year:</span><span> {{ program.launch_year }}</span>
+    </div>
+    <div class="row-data">
+      <span>Successful launch:</span><span> {{ program.launch_success }}</span>
+    </div>
+    <div class="row-data">
+      <span>Successful landing:</span>
+      <span>{{ program.launch_failure_details ? false : true }}</span>
+    </div>
+  </div>
+</div>
