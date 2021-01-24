@@ -8,9 +8,8 @@ describe('HeaderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HeaderComponent ]
-    })
-    .compileComponents();
+      declarations: [HeaderComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -21,5 +20,9 @@ describe('HeaderComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('title validation', () => {
+    expect(component.title).toBe('SpaceEx Launch Program');
   });
 });
