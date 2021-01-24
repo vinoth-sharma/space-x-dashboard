@@ -1,5 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import {
+  HttpClientTestingModule,
+  HttpTestingController,
+} from '@angular/common/http/testing';
 import { ProgramWrapperComponent } from './program-wrapper.component';
 
 describe('ProgramWrapperComponent', () => {
@@ -8,9 +11,9 @@ describe('ProgramWrapperComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProgramWrapperComponent ]
-    })
-    .compileComponents();
+      imports: [HttpClientTestingModule],
+      declarations: [ProgramWrapperComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

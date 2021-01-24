@@ -20,7 +20,7 @@ import { GlobalService } from './global.service';
     FilterWrapperComponent,
     ProgramWrapperComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule.withServerTransition({ appId: 'serverApp' }), AppRoutingModule, HttpClientModule],
   providers: [GlobalService],
   bootstrap: [AppComponent],
 })
