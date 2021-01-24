@@ -25,7 +25,6 @@ export class ProgramWrapperComponent implements OnInit {
     this.globalService
       .getAllSpacePrograms(params)
       .subscribe((response: Array<any>) => {
-        console.log(response);
         this.programData = response;
       });
   }

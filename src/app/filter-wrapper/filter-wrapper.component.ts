@@ -48,8 +48,6 @@ export class FilterWrapperComponent implements OnInit {
       default:
         break;
     }
-
-    console.log(this.filterselectedObj);
     this.updateDataWithFilters();
   }
 
@@ -58,11 +56,9 @@ export class FilterWrapperComponent implements OnInit {
     for (const key in this.filterselectedObj) {
       if (Object.prototype.hasOwnProperty.call(this.filterselectedObj, key)) {
         const element = this.filterselectedObj[key];
-        console.log(element);
         if (element !== null) url += '&' + key + '=' + element;
       }
     }
     this.filterSelectedEmittor.emit(url);
-    console.log(url);
   }
 }

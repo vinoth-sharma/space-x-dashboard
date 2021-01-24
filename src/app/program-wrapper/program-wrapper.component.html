@@ -1,12 +1,12 @@
 <div class="program-wrapper">
   <div class="program-container" *ngFor="let program of programData">
     <div class="textCenter" style="height: 22vh">
-      <img [src]="program.links?.mission_patch_small" alt="Program Img" />
+      <img [src]="program.links?.mission_patch_small" alt="Program Image" />
     </div>
     <h3 title="{{ program.mission_name }} #{{ program.flight_number }}">
       {{ program.mission_name }} #{{ program.flight_number }}
     </h3>
-    <div><strong>Missiom Ids</strong></div>
+    <div><strong>Mission Ids</strong></div>
     <ul>
       <li *ngFor="let mission of program.mission_id">{{ mission }}</li>
       <li *ngIf="!program.mission_id.length">no mission id found</li>

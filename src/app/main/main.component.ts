@@ -13,7 +13,6 @@ export class MainComponent implements OnInit {
   ngOnInit(): void {}
 
   updateFilters(value) {
-    console.log(value);
     this.url = value;
   }
 }
