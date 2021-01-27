@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/space-x-dashboard",
+    "public": "dist/space-x-dashboard/browser",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
   }
 }

@@ -25,10 +25,11 @@
       </div>
     </article>
   </ng-container>
-  <div *ngIf="!programData.length && !isLoading" class="err-msg">
-    <h2 class="textCenter">No Data Found</h2>
-  </div>
-  <div *ngIf="isLoading" class="err-msg">
-    <h2 class="textCenter">Loading ...</h2>
-  </div>
+</div>
+
+<div *ngIf="!programData.length && !isLoading" class="err-msg">
+  <h2 class="textCenter">No Data Found</h2>
+</div>
+<div *ngIf="isLoading" class="err-msg">
+  <h2 class="textCenter">Loading ...</h2>
 </div>
