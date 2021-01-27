@@ -3,8 +3,9 @@
   <h4 class="title">Launch Year</h4>
   <div class="grid-display">
     <button
-      *ngFor="let year of yearsList"
+      *ngFor="let year of yearsList; let i = index"
       (click)="filterSelected(year, 'launch_year')"
+      (enter)="filterSelected(year, 'launch_year')"
       [ngClass]="{ selected: year === filterselectedObj.launch_year }"
     >
       {{ year }}

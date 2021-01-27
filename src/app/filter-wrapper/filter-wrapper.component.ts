@@ -1,9 +1,18 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  HostListener,
+  OnInit,
+  Output,
+} from '@angular/core';
 
 @Component({
   selector: 'app-filter-wrapper',
   templateUrl: './filter-wrapper.component.html',
   styleUrls: ['./filter-wrapper.component.scss'],
+  host: {
+    '(document:keydown)': 'handleKeyboardEvents($event)',
+  },
 })
 export class FilterWrapperComponent implements OnInit {
   @Output() filterSelectedEmittor = new EventEmitter();
@@ -14,6 +23,14 @@ export class FilterWrapperComponent implements OnInit {
     launch_success: null,
     land_success: null,
   };
+
+  handleKeyboardEvents(event: KeyboardEvent) {
+    if (event.key === 'Tab' && document.activeElement.nodeName !== 'BUTTON') {
+      event.preventDefault();
+      event.stopPropagation();
+      document.getElementsByTagName('button')[0].focus();
+    }
+  }
 
   constructor() {}
 

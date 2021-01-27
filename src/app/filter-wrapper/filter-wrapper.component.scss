@@ -22,6 +22,9 @@
       &.selected {
         background-color: green;
       }
+      &:focus {
+        background: green;
+      }
     }
   }
   .title {
