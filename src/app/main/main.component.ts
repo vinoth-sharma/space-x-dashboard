@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-main',
@@ -7,12 +7,18 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
   public url: string = '';
+  public isLoading: boolean = false;
 
-  constructor() {}
+  constructor(private cdRef: ChangeDetectorRef) {}
 
   ngOnInit(): void {}
 
   updateFilters(value) {
     this.url = value;
+  }
+
+  isLoadingValue(value) {
+    this.isLoading = value;
+    this.cdRef.detectChanges();
   }
 }

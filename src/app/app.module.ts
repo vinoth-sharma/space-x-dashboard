@@ -10,6 +10,8 @@ import { MainComponent } from './main/main.component';
 import { FilterWrapperComponent } from './filter-wrapper/filter-wrapper.component';
 import { ProgramWrapperComponent } from './program-wrapper/program-wrapper.component';
 import { GlobalService } from './global.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,13 @@ import { GlobalService } from './global.service';
     FilterWrapperComponent,
     ProgramWrapperComponent,
   ],
-  imports: [BrowserModule.withServerTransition({ appId: 'serverApp' }), AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatProgressBarModule,
+  ],
   providers: [GlobalService],
   bootstrap: [AppComponent],
 })

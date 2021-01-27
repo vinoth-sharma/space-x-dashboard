@@ -1,4 +1,11 @@
-import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
 import { GlobalService } from '../global.service';
 @Component({
   selector: 'app-program-wrapper',
@@ -7,6 +14,9 @@ import { GlobalService } from '../global.service';
 })
 export class ProgramWrapperComponent implements OnInit {
   @Input() filterSelected: string = '';
+  @Output() isLoadingEmittor = new EventEmitter();
+
+  isLoading: boolean = false;
 
   programData = [];
   constructor(private globalService: GlobalService) {}
@@ -22,10 +32,14 @@ export class ProgramWrapperComponent implements OnInit {
   }
 
   getAllProgramDetails(params) {
+    this.isLoading = true;
+    this.isLoadingEmittor.emit(true);
     this.globalService
       .getAllSpacePrograms(params)
       .subscribe((response: Array<any>) => {
         this.programData = response;
+        this.isLoading = false;
+        this.isLoadingEmittor.emit(false);
       });
   }
 }

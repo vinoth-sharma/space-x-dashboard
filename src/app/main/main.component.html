@@ -1,6 +1,14 @@
+<mat-progress-bar
+  mode="indeterminate"
+  *ngIf="isLoading"
+  style="position: absolute"
+></mat-progress-bar>
 <main class="flex">
   <app-filter-wrapper
     (filterSelectedEmittor)="updateFilters($event)"
   ></app-filter-wrapper>
-  <app-program-wrapper [filterSelected]="url"></app-program-wrapper>
+  <app-program-wrapper
+    [filterSelected]="url"
+    (isLoadingEmittor)="isLoadingValue($event)"
+  ></app-program-wrapper>
 </main>
