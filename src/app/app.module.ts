@@ -12,6 +12,7 @@ import { ProgramWrapperComponent } from './program-wrapper/program-wrapper.compo
 import { GlobalService } from './global.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     HttpClientModule,
     BrowserAnimationsModule,
     MatProgressBarModule,
+    FormsModule,
   ],
   providers: [GlobalService],
   bootstrap: [AppComponent],

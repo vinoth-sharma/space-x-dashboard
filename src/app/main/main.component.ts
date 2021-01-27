@@ -1,4 +1,10 @@
-import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
+import {
+  ChangeDetectorRef,
+  Component,
+  HostListener,
+  Input,
+  OnInit,
+} from '@angular/core';
 
 @Component({
   selector: 'app-main',
@@ -8,8 +14,17 @@ import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 export class MainComponent implements OnInit {
   public url: string = '';
   public isLoading: boolean = false;
+  public isArrowEnable: boolean = false;
 
   constructor(private cdRef: ChangeDetectorRef) {}
+
+  onElementScroll(event) {
+    if (event.target.scrollTop > 200) {
+      this.isArrowEnable = true;
+    } else {
+      this.isArrowEnable = false;
+    }
+  }
 
   ngOnInit(): void {}
 
@@ -20,5 +35,10 @@ export class MainComponent implements OnInit {
   isLoadingValue(value) {
     this.isLoading = value;
     this.cdRef.detectChanges();
+  }
+
+  swipeUp() {
+    document.getElementsByTagName('main')[0].scrollTop = 0;
+    document.documentElement.scrollTop = 0;
   }
 }

@@ -3,7 +3,7 @@
   *ngIf="isLoading"
   style="position: absolute"
 ></mat-progress-bar>
-<main class="flex">
+<main class="flex" (scroll)="onElementScroll($event)">
   <app-filter-wrapper
     (filterSelectedEmittor)="updateFilters($event)"
   ></app-filter-wrapper>
@@ -11,4 +11,11 @@
     [filterSelected]="url"
     (isLoadingEmittor)="isLoadingValue($event)"
   ></app-program-wrapper>
+  <img
+    src="assets/icons/up.png"
+    alt="up-arrow"
+    class="up-arrow"
+    (click)="swipeUp()"
+    *ngIf="isArrowEnable"
+  />
 </main>

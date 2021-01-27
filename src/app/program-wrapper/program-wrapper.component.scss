@@ -26,6 +26,9 @@
       }
     }
   }
+  .err-msg {
+    width: 700px;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -38,5 +41,8 @@
   .program-wrapper {
     grid-template-columns: repeat(1, minmax(160px, 1fr));
     margin-top: 20px;
+    .err-msg {
+      width: unset;
+    }
   }
 }

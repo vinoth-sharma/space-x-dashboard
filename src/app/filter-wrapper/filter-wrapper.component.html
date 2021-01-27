@@ -4,8 +4,8 @@
   <div class="grid-display">
     <button
       *ngFor="let year of yearsList; let i = index"
-      (click)="filterSelected(year, 'launch_year')"
-      (enter)="filterSelected(year, 'launch_year')"
+      (click)="filterSelected($event, year, 'launch_year')"
+      (enter)="filterSelected($event, year, 'launch_year')"
       [ngClass]="{ selected: year === filterselectedObj.launch_year }"
     >
       {{ year }}
@@ -14,13 +14,13 @@
   <h4 class="title">Successful Launch</h4>
   <div class="grid-display">
     <button
-      (click)="filterSelected(true, 'launch_success')"
+      (click)="filterSelected($event, true, 'launch_success')"
       [ngClass]="{ selected: true === filterselectedObj.launch_success }"
     >
       True
     </button>
     <button
-      (click)="filterSelected(false, 'launch_success')"
+      (click)="filterSelected($event, false, 'launch_success')"
       [ngClass]="{ selected: false === filterselectedObj.launch_success }"
     >
       False
@@ -29,13 +29,13 @@
   <h4 class="title">Successful Landing</h4>
   <div class="grid-display">
     <button
-      (click)="filterSelected(true, 'land_success')"
+      (click)="filterSelected($event, true, 'land_success')"
       [ngClass]="{ selected: true === filterselectedObj.land_success }"
     >
       True
     </button>
     <button
-      (click)="filterSelected(false, 'land_success')"
+      (click)="filterSelected($event, false, 'land_success')"
       [ngClass]="{ selected: false === filterselectedObj.land_success }"
     >
       False

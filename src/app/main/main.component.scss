@@ -10,6 +10,13 @@ main {
   // position: sticky;
   // top: 0;
 }
+.up-arrow {
+  height: 60px;
+  position: absolute;
+  left: 30px;
+  bottom: 10vh;
+  cursor: pointer;
+}
 
 @media (max-width: 700px) {
   main {
@@ -18,5 +25,8 @@ main {
   }
   .sticky {
     position: unset;
+  }
+  .up-arrow {
+    display: none;
   }
 }

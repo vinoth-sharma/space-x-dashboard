@@ -6,6 +6,8 @@ import {
   Output,
 } from '@angular/core';
 
+// var document: any;
+
 @Component({
   selector: 'app-filter-wrapper',
   templateUrl: './filter-wrapper.component.html',
@@ -47,7 +49,11 @@ export class FilterWrapperComponent implements OnInit {
     this.yearsList.sort();
   }
 
-  filterSelected(value: any, type: string) {
+  filterSelected(event, value: any, type: string) {
+    if (this.filterselectedObj[type] === value) {
+      // document.activeElement.blur();
+      event.view.document.activeElement.blur();
+    }
     switch (type) {
       case 'launch_year':
         this.filterselectedObj[type] =
