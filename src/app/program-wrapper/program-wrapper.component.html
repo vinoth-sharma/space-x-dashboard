@@ -1,9 +1,9 @@
 <div class="program-wrapper">
   <ng-container *ngIf="!isLoading">
-    <div class="program-container" *ngFor="let program of programData">
-      <div class="textCenter" style="height: 22vh">
+    <article class="program-container" *ngFor="let program of programData">
+      <figure class="textCenter" style="height: 22vh">
         <img [src]="program.links?.mission_patch_small" alt="Program Image" />
-      </div>
+      </figure>
       <h3 title="{{ program.mission_name }} #{{ program.flight_number }}">
         {{ program.mission_name }} #{{ program.flight_number }}
       </h3>
@@ -23,7 +23,7 @@
         <span>Successful landing:</span>
         <span>{{ program.launch_failure_details ? false : true }}</span>
       </div>
-    </div>
+    </article>
   </ng-container>
   <div *ngIf="!programData.length && !isLoading" class="err-msg">
     <h2 class="textCenter">No Data Found</h2>
