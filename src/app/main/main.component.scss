@@ -1,6 +1,7 @@
 main {
   height: calc(100vh - 17vh - 60px);
   overflow: auto;
+  scroll-behavior: smooth;
   //   width: 100%;
   background-color: #9f9f9f;
   justify-content: space-around;

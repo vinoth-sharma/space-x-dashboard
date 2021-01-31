@@ -10,7 +10,7 @@
       <div><strong>Mission Ids</strong></div>
       <ul>
         <li *ngFor="let mission of program.mission_id">{{ mission }}</li>
-        <li *ngIf="!program.mission_id.length">no mission id found</li>
+        <li *ngIf="!program.mission_id.length">No mission id found</li>
       </ul>
       <div class="row-data">
         <span>Launch Year:</span><span> {{ program.launch_year }}</span>
@@ -21,7 +21,7 @@
       </div>
       <div class="row-data">
         <span>Successful landing:</span>
-        <span>{{ program.launch_failure_details ? false : true }}</span>
+        <span>{{ program.land_success }}</span>
       </div>
     </article>
   </ng-container>

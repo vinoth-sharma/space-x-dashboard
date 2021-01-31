@@ -26,6 +26,7 @@ export class FilterWrapperComponent implements OnInit {
     land_success: null,
   };
 
+  // tab key handler
   handleKeyboardEvents(event: KeyboardEvent) {
     if (event.key === 'Tab' && document.activeElement.nodeName !== 'BUTTON') {
       event.preventDefault();
@@ -49,6 +50,7 @@ export class FilterWrapperComponent implements OnInit {
     this.yearsList.sort();
   }
 
+  //on filter selection
   filterSelected(event, value: any, type: string) {
     if (this.filterselectedObj[type] === value) {
       // document.activeElement.blur();
@@ -71,17 +73,20 @@ export class FilterWrapperComponent implements OnInit {
       default:
         break;
     }
-    this.updateDataWithFilters();
+    this.filterSelectedEmittor.emit(
+      JSON.parse(JSON.stringify(this.filterselectedObj))
+    );
+    // this.updateDataWithFilters();
   }
 
-  updateDataWithFilters() {
-    let url = '';
-    for (const key in this.filterselectedObj) {
-      if (Object.prototype.hasOwnProperty.call(this.filterselectedObj, key)) {
-        const element = this.filterselectedObj[key];
-        if (element !== null) url += '&' + key + '=' + element;
-      }
-    }
-    this.filterSelectedEmittor.emit(url);
-  }
+  // updateDataWithFilters() {
+  //   let url = '';
+  //   for (const key in this.filterselectedObj) {
+  //     if (Object.prototype.hasOwnProperty.call(this.filterselectedObj, key)) {
+  //       const element = this.filterselectedObj[key];
+  //       if (element !== null) url += '&' + key + '=' + element;
+  //     }
+  //   }
+  //   this.filterSelectedEmittor.emit(url);
+  // }
 }

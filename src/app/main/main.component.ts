@@ -12,7 +12,7 @@ import {
   styleUrls: ['./main.component.scss'],
 })
 export class MainComponent implements OnInit {
-  public url: string = '';
+  public selectedData: any = null;
   public isLoading: boolean = false;
   public isArrowEnable: boolean = false;
 
@@ -29,7 +29,7 @@ export class MainComponent implements OnInit {
   ngOnInit(): void {}
 
   updateFilters(value) {
-    this.url = value;
+    this.selectedData = value;
   }
 
   isLoadingValue(value) {

@@ -13,7 +13,7 @@ import { GlobalService } from '../global.service';
   styleUrls: ['./program-wrapper.component.scss'],
 })
 export class ProgramWrapperComponent implements OnInit {
-  @Input() filterSelected: string = '';
+  @Input() filterSelected: any = null;
   @Output() isLoadingEmittor = new EventEmitter();
 
   isLoading: boolean = false;
@@ -34,12 +34,13 @@ export class ProgramWrapperComponent implements OnInit {
   getAllProgramDetails(params) {
     this.isLoading = true;
     this.isLoadingEmittor.emit(true);
-    this.globalService
-      .getAllSpacePrograms(params)
-      .subscribe((response: Array<any>) => {
+    this.globalService.getAllSpacePrograms(params).subscribe(
+      (response: Array<any>) => {
         this.programData = response;
         this.isLoading = false;
         this.isLoadingEmittor.emit(false);
-      });
+      },
+      (err) => console.log(err)
+    );
   }
 }

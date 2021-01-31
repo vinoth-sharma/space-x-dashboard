@@ -13,6 +13,7 @@ import { GlobalService } from './global.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { FormsModule } from '@angular/forms';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { FormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     MatProgressBarModule,
     FormsModule,
+    MatSnackBarModule,
   ],
   providers: [GlobalService],
   bootstrap: [AppComponent],

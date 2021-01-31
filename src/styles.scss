@@ -6,6 +6,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 button:active,
 button:focus {
@@ -29,5 +30,7 @@ button:focus {
   justify-content: center;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.mat-snack-bar-container {
+  background-color: #c82020 !important;
+  color: whitesmoke;
+}
